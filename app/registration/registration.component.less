@@ -1,0 +1,287 @@
+@position: relative;
+@black: #000;
+@white: #fff;
+@pink: rgba(255, 0, 128, 1);
+@border: 4px solid @pink;
+@fontfamily: Realize My Passion;
+input[type="text"]:focus { outline: none; }
+input[type="password"]:focus { outline: none; }
+:focus::-webkit-input-placeholder {color: transparent}
+:focus::-moz-placeholder          {color: transparent}
+:focus:-moz-placeholder           {color: transparent}
+:focus:-ms-input-placeholder      {color: transparent}
+input[placeholder]          {text-overflow:ellipsis;}
+input::-moz-placeholder     {text-overflow:ellipsis;} 
+input:-moz-placeholder      {text-overflow:ellipsis;} 
+input:-ms-input-placeholder {text-overflow:ellipsis;}
+::-webkit-input-placeholder {color: @pink; text-align: center; font-family: @fontfamily; font-size: 1.2em; font-weight: bold}
+::-moz-placeholder          {color: @pink; text-align: center; font-family: @fontfamily; font-size: 1.2em; font-weight: bold}/* Firefox 19+ */
+:-moz-placeholder           {color: @pink; text-align: center; font-family: @fontfamily; font-size: 1.2em; font-weight: bold}/* Firefox 18- */
+:-ms-input-placeholder      {color: @pink; text-align: center; font-family: @fontfamily; font-size: 1.2em; font-weight: bold}
+@font-face{
+    font-family: @fontfamily;
+    src: local(@fontfamily),
+         url('fonts/Realize My Passion.otf');
+}
+body, p, h1, h2, h3, h4{
+    font-family: @fontfamily;
+}
+@media screen and (min-width: 1280px){
+    header{
+        position: fixed;
+        display: flex;
+        width: 100%;
+        font-size: 2em;
+        color: @pink;
+        text-shadow: 1px 1px 2px @white, 0 0 1em @pink;
+        z-index: 1;
+        #skvAnimDiv{
+            width: 100%;
+            min-height: 200px;
+        }
+        @keyframes SAnimate{
+            0%{
+                -webkit-transform: rotate(10deg); 
+                -ms-transform: rotate(10deg);
+                transform: rotate(10deg);
+                -webkit-transform-origin: bottom right; 
+                -ms-transform-origin: bottom right; 
+                transform-origin: bottom right;
+            }
+            20%{
+                -webkit-transform: rotate(-15deg); 
+                -ms-transform: rotate(-15deg);
+                transform: rotate(-15deg);
+                -webkit-transform-origin: bottom left; 
+                -ms-transform-origin: bottom left; 
+                transform-origin: bottom left;
+            }
+            40%{
+                -webkit-transform: rotate(25deg); 
+                -ms-transform: rotate(25deg);
+                transform: rotate(25deg);
+                -webkit-transform-origin: bottom right; 
+                -ms-transform-origin: bottom right; 
+                transform-origin: bottom right; 
+            }
+            60%{
+                -webkit-transform: rotate(-35deg); 
+                -ms-transform: rotate(-35deg);
+                transform: rotate(-35deg);
+                -webkit-transform-origin: bottom left; 
+                -ms-transform-origin: bottom left; 
+                transform-origin: bottom left; 
+            }
+            80%{
+                -webkit-transform: rotate(45deg); 
+                -ms-transform: rotate(45deg);
+                transform: rotate(45deg);
+                -webkit-transform-origin: bottom right; 
+                -ms-transform-origin: bottom right; 
+                transform-origin: bottom right;  
+            }
+            100%{
+                -webkit-transform: rotate(-90deg); 
+                -ms-transform: rotate(-90deg);
+                transform: rotate(-90deg);
+                -webkit-transform-origin: bottom left; 
+                -ms-transform-origin: bottom left; 
+                transform-origin: bottom left;
+            }
+        }
+        @keyframes elseAnimate{
+            0%{
+                top: 4vh;
+            }
+            50%{
+                top: +1vh;
+            }
+            100%{
+                top: 4vh;
+            }
+        }
+        #S{
+            position: absolute;
+            left: 38vw;
+            top: 4vh;
+        }
+        #else{
+            position: absolute;
+            left: 38vw;
+            margin-left: 0.7em;
+            top: 4vh;
+        }    
+    }
+    #skvAnimDiv:hover{
+        cursor: pointer;
+        #S{
+            animation: SAnimate 3s normal ease forwards;
+        }
+        #else{
+            animation: elseAnimate 0.4s 2.9s normal ease forwards;
+        }
+    }
+    .wrapper{
+        display: block;
+        position: relative;
+        width: 100%;
+        height: 95%;
+    }
+    .registrInputs{
+    position: @position;
+    border: @border;
+    border-radius: 5px;
+    left: 41.77vw;
+    top: 38.3vh;
+    width: 300px;
+    height: 45px;
+    padding-left: 4px;
+    font-family: @fontfamily;
+    text-align: left;
+    font-size: 1.2em;
+    letter-spacing: 0.1em;
+    }
+    .registrButtons{
+    position: @position;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    border-radius: 5px;
+    left: 41.77vw;
+    top: 38.3vh;
+    width: 150px;
+    height: 45px;
+    padding-left: 4px;
+    font-family: @fontfamily;
+    font-size: 1.2em;
+    letter-spacing: 0.1em;
+    outline: none;
+    -webkit-transition: background-color 3s;
+    -moz-transition: background-color 3s;
+    -o-transition: background-color 3s;
+    transition: background-color 3s;
+    }
+    .registrButtons:active{
+        background-color: @pink;
+        -webkit-transition: background-color 0.1s;
+        -moz-transition: background-color 0.1s;
+        -o-transition: background-color 0.1s;
+        transition: background-color 0.1s;
+    }
+    #enterButton{
+        text-align: left;
+    }
+    #registrButton{
+        text-align: right;
+    }
+    footer{
+        text-align: right;
+        position: relative;
+        display: block;
+    }
+}
+/*
+@keyframes skvAnimateDiv1{
+            0%{
+                width: 0vw;
+            }
+            100%{
+                left: -10px;
+                width: 44vw;
+            }
+        }
+            @keyframes skvAnimateDiv2{
+                0%{
+                    width: 0vw;
+                }    
+                100%{
+                    //left: 42.9vw;
+                    width: 8vw;
+                }
+            }
+            @keyframes skvAnimateDiv3{
+                0%{
+                    height: 0;
+                }
+                100%{
+                    height: 31vh;
+                }
+            }
+            @keyframes skvAnimateDiv5{
+                0%{
+                    width: 0;
+                }
+                100%{
+                    width: 44vw;
+                }
+            }
+            #skvAnimDiv{
+            position: relative;
+            width: 100%;
+                #div1{
+                height: 1vh;
+                animation: skvAnimateDiv1 0.2s normal ease forwards;
+                background-color: @pink;
+                display: block;
+                position: absolute;
+                left: -10px;
+                top: 150px;
+                }
+                #div2{
+                height: 1vh;
+                animation: skvAnimateDiv2 0.2s 0.2s normal ease forwards;
+                -webkit-transform: skew(45deg, -45deg);
+                -ms-transform: skew(45deg, -45deg); 
+                transform: skew(0deg, -45deg);
+                -webkit-transform-origin: 0 0;
+                -moz-transform-origin: 0 0;
+                -o-transform-origin: 0 0;
+                -ms-transform-origin: 0 0;
+                transform-origin: 0 0;     
+                background-color: @pink;
+                display: block;
+                position: absolute;
+                left: 43.3vw;
+                top: 150px;
+                width: 0vw;
+                }
+                #div3{
+                height: 0;
+                width: 0.35vw;
+                animation: skvAnimateDiv3 0.2s 0.4s normal ease forwards;
+                background-color: @pink;
+                display: block;
+                position: absolute;
+                left: 50.95vw;
+                top: 4vh; 
+                }
+                #div4{
+                height: 1vh;
+                animation: skvAnimateDiv2 0.2s 0.6s normal ease forwards;
+                -webkit-transform: skew(45deg, -45deg);
+                -ms-transform: skew(45deg, -45deg); 
+                transform: skew(0deg, -45deg);
+                -webkit-transform-origin: 0 0;
+                -moz-transform-origin: 0 0;
+                -o-transform-origin: 0 0;
+                -ms-transform-origin: 0 0;
+                transform-origin: 0 0;     
+                background-color: @pink;
+                display: block;
+                position: absolute;
+                left: 50.92vw;
+                top: 268px;
+                width: 0vw;
+                }
+                #div5{
+                height: 1vh;
+                width: 0;
+                animation: skvAnimateDiv5 0.2s 0.8s normal ease forwards;
+                background-color: @pink;
+                display: block;
+                position: absolute;
+                left: 58.9vw;
+                top: 140px;
+                }
+            }
+*/
